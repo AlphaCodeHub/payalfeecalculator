@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PayPal Fee Calculator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PayPal Fee Calculator</h1>
+  </header>
+
+  <section class="calculator">
+    <div class="form-group">
+      <label for="amount">Enter Amount In ($):</label>
+      <input type="number" id="amount" min="0" step="0.01" required>
+    </div>
+    <div class="form-group">
+      <label for="currency">Currency:</label>
+      <select id="currency">
+        <option value="$">USD</option>
+        <option value="€">EUR</option>
+        <option value="£">GBP</option>
+        <option value="¥">JPY</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="fee">PayPal Fee:</label>
+      <span id="fee"></span>
+    </div>
+    <div class="form-group">
+      <label for="total">Total Amount:</label>
+      <span id="total"></span>
+    </div>
+    <div class="form-group">
+      <label for="received">You Will Receive:</label>
+      <span id="received"></span>
+    </div>
+    <div class="form-group">
+      <button id="calculate-btn">Calculate</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+  </section>
+
+  <section class="explanation">
+    <h2>Understanding PayPal Fees</h2>
+    <p>When you receive money through PayPal, there are fees associated with each transaction. The fees vary based on your monthly sales volume and whether the transaction involves international customers.</p>
+    
+    <h3>Monthly Sale</h3>
+    <ul>
+      <li>Up to $3,000 USD: 4.4% + Fixed Fee</li>
+      <li>$3,000.01 USD - $10,000.00 USD: 3.9% + Fixed Fee</li>
+      <li>$10,000.01 USD - $100,000.00 USD: 3.7% + Fixed Fee</li>
+      <li>Above $100,000.01 USD: 3.4% + Fixed Fee</li>
+    </ul>
+    
+    <h3>International Customers (per transaction)</h3>
+    <ul>
+      <li>4.4% + Fixed Fee</li>
+      <li>3.9% + Fixed Fee</li>
+      <li>3.7% + Fixed Fee</li>
+      <li>3.4% + Fixed Fee</li>
+    </ul>
+    
+    <p>Please note that actual PayPal fees may vary depending on your account type, transaction currency, and other factors. This calculator provides an estimate based on the specified fee structure.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
